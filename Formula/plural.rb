@@ -5,23 +5,23 @@
 class Plural < Formula
   desc "TUI for managing multiple concurrent Claude Code sessions"
   homepage "https://github.com/zhubert/plural"
-  version "0.2.3"
+  version "0.2.4"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/zhubert/plural/releases/download/v0.2.3/plural_Darwin_x86_64.tar.gz"
-      sha256 "df1073ad06d10bcffffbdc735acb59521bc2fb83e363e80ecebc8d29a88084be"
+      url "https://github.com/zhubert/plural/releases/download/v0.2.4/plural_Darwin_x86_64.tar.gz"
+      sha256 "4e2f16492176cee4bfaadb733a6faaad60e74d6ee66217e61b4459cae5cadbc8"
 
       def install
         bin.install "plural"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/zhubert/plural/releases/download/v0.2.3/plural_Darwin_arm64.tar.gz"
-      sha256 "7bb244bf99f2ede3ba21966fc71045e89844ad4e7e2ab54ebd6bd3da961d9fe2"
+      url "https://github.com/zhubert/plural/releases/download/v0.2.4/plural_Darwin_arm64.tar.gz"
+      sha256 "c2ac66bea9a9ac87421ae02e03f7eda624e6438b5069623a107f131a1a96a63b"
 
       def install
         bin.install "plural"
@@ -31,15 +31,15 @@ class Plural < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/plural/releases/download/v0.2.3/plural_Linux_x86_64.tar.gz"
-      sha256 "7f2f93ecc5a195b0f560ee8568f02d9b11b9640b7e6e8f1eb67b03e0310ec792"
+      url "https://github.com/zhubert/plural/releases/download/v0.2.4/plural_Linux_x86_64.tar.gz"
+      sha256 "9a760d4eb05f994dc8ec5a1d601834285cdcb5144d34bcd1633b5efdabfc8c61"
       def install
         bin.install "plural"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/plural/releases/download/v0.2.3/plural_Linux_arm64.tar.gz"
-      sha256 "5dc040cb8f6a96bdd41b301fe821622f3d472568154bd4d703779a207704ec62"
+      url "https://github.com/zhubert/plural/releases/download/v0.2.4/plural_Linux_arm64.tar.gz"
+      sha256 "64a4f32ba25d7722e28906e552302d17143765387abdc37120653ea76a1178f7"
       def install
         bin.install "plural"
       end
