@@ -5,23 +5,23 @@
 class Milo < Formula
   desc "A Go-based AI coding agent"
   homepage "https://github.com/zhubert/milo"
-  version "0.4.0"
+  version "0.4.1"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/zhubert/milo/releases/download/v0.4.0/milo_Darwin_x86_64.tar.gz"
-      sha256 "c9c896cef0df2644ffeb59f7c3ef99623776dfdd46fd505982ac153fd5d2bdc4"
+      url "https://github.com/zhubert/milo/releases/download/v0.4.1/milo_Darwin_x86_64.tar.gz"
+      sha256 "eaa8a525ce4803502c4d4e842a883e98e754ee1fe77a6d734be3685051757c7a"
 
       def install
         bin.install "milo"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/zhubert/milo/releases/download/v0.4.0/milo_Darwin_arm64.tar.gz"
-      sha256 "62f2893fd49077fe8371818c4fc3f2a4230874a2dc562c111e0f47e33ea44ff4"
+      url "https://github.com/zhubert/milo/releases/download/v0.4.1/milo_Darwin_arm64.tar.gz"
+      sha256 "37cb5b9528bad295e8a1446ee7bc7dd4ea56d7cb00ff99b428fb6d2e717d64bb"
 
       def install
         bin.install "milo"
@@ -31,15 +31,15 @@ class Milo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/milo/releases/download/v0.4.0/milo_Linux_x86_64.tar.gz"
-      sha256 "303f19f5c6e1a971c9fdda49154b0570aa35896c5d7601e79a2ddd948d75760a"
+      url "https://github.com/zhubert/milo/releases/download/v0.4.1/milo_Linux_x86_64.tar.gz"
+      sha256 "3bd17ebefa44c7e9527742d72b19b0925ea9676cadf543e76203d50ff69a891a"
       def install
         bin.install "milo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/milo/releases/download/v0.4.0/milo_Linux_arm64.tar.gz"
-      sha256 "fb47e11484cf748cf32ebcb3308aa61b4d3bae9ef4ecd3bbf77aebf87afa40e7"
+      url "https://github.com/zhubert/milo/releases/download/v0.4.1/milo_Linux_arm64.tar.gz"
+      sha256 "6663520af86431c1b59dc824191db938a8bd9a7cb76c1068e43f395d2963d1c4"
       def install
         bin.install "milo"
       end
