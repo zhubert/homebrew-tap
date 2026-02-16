@@ -5,23 +5,23 @@
 class Plural < Formula
   desc "TUI for managing multiple concurrent Claude Code sessions"
   homepage "https://github.com/zhubert/plural"
-  version "0.16.1"
+  version "0.16.2"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/zhubert/plural/releases/download/v0.16.1/plural_Darwin_x86_64.tar.gz"
-      sha256 "17f346d41f66125c915e590b2ae28eea25bdaab10240fef44db4d2d9bfb8a820"
+      url "https://github.com/zhubert/plural/releases/download/v0.16.2/plural_Darwin_x86_64.tar.gz"
+      sha256 "7d1d37f8fec2063fe5afb819753be91d7f33544c99d3719fca9ea9cc2a014559"
 
       def install
         bin.install "plural"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/zhubert/plural/releases/download/v0.16.1/plural_Darwin_arm64.tar.gz"
-      sha256 "99a848369cc014d0216b25c89ee2b51a6a065311444e895cdff771f056b815d3"
+      url "https://github.com/zhubert/plural/releases/download/v0.16.2/plural_Darwin_arm64.tar.gz"
+      sha256 "4cba5f3bcd18053064899c6950e995b217c30b6f60b9168a7e4e92882de05a15"
 
       def install
         bin.install "plural"
@@ -31,15 +31,15 @@ class Plural < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/plural/releases/download/v0.16.1/plural_Linux_x86_64.tar.gz"
-      sha256 "612fba2d7743eebec29f999b5375bdbe901233a3528ce248318ccbf6ebf622a9"
+      url "https://github.com/zhubert/plural/releases/download/v0.16.2/plural_Linux_x86_64.tar.gz"
+      sha256 "82620a0169b48625d905f9e48d5c10b3cfea02139c83241bf1d7f84bfe2bb0a4"
       def install
         bin.install "plural"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/plural/releases/download/v0.16.1/plural_Linux_arm64.tar.gz"
-      sha256 "b8ad3170795b4ab6b23cf67a7b9f25e105ba6dc134d1f97bf22a9102e7b07ffa"
+      url "https://github.com/zhubert/plural/releases/download/v0.16.2/plural_Linux_arm64.tar.gz"
+      sha256 "5495765274903c23a18155ad856e1ae30b33fcecc1d19754d93a0920c3f23aba"
       def install
         bin.install "plural"
       end
