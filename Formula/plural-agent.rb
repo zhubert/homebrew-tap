@@ -14,7 +14,7 @@ class PluralAgent < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/zhubert/plural-agent/releases/download/v0.2.6/plural-agent_Darwin_x86_64.tar.gz"
-      sha256 "b39d63d0812713ab8cc554062a471897ec681f528df69632f7fa9d03966e40fd"
+      sha256 "2875dcd6fe99f5f4ed7efbb73dbc6831485865d2f97984726be67103a5c71d24"
 
       def install
         bin.install "plural-agent"
@@ -22,7 +22,7 @@ class PluralAgent < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/zhubert/plural-agent/releases/download/v0.2.6/plural-agent_Darwin_arm64.tar.gz"
-      sha256 "7f9cb101a6e19e1962089ca5bfd18d8037e86ff043042efaaf9a2ac93a64b26e"
+      sha256 "15505d05f6ab34937fd23104df5098271309d37a1c6317b77726a661ac3ce94f"
 
       def install
         bin.install "plural-agent"
@@ -33,14 +33,14 @@ class PluralAgent < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/zhubert/plural-agent/releases/download/v0.2.6/plural-agent_Linux_x86_64.tar.gz"
-      sha256 "0307e8ca0eac176f764b461fd76e317b41d6f230001477d4046f17a0657fbbaa"
+      sha256 "8b4e53e9fe8b40654c0372b5dc80cfeab1c447e6ac2b61b3acadcd15d777d697"
       def install
         bin.install "plural-agent"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/zhubert/plural-agent/releases/download/v0.2.6/plural-agent_Linux_arm64.tar.gz"
-      sha256 "bced1434f05ce375b6d78a14676e204baa6f938c16999f2df6af2e559708d87d"
+      sha256 "877c8807e0d009aff503b53960455ab8d296d952acd74eec7fb9ceeaa6b089f5"
       def install
         bin.install "plural-agent"
       end
