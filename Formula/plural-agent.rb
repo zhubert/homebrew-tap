@@ -5,7 +5,7 @@
 class PluralAgent < Formula
   desc "Autonomous headless daemon for Claude Code"
   homepage "https://github.com/zhubert/plural-agent"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   depends_on "docker" => :recommended
@@ -13,16 +13,16 @@ class PluralAgent < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/zhubert/plural-agent/releases/download/v0.3.0/plural-agent_Darwin_x86_64.tar.gz"
-      sha256 "2af1169d56ea270e4ddb1ce3cc72b1f4525c1998f06b605914975063b4c6fa07"
+      url "https://github.com/zhubert/plural-agent/releases/download/v0.3.1/plural-agent_Darwin_x86_64.tar.gz"
+      sha256 "beb3393d6388b7a3c978f90e7133f72fd38846d868900ffda9404048b010d28b"
 
       def install
         bin.install "plural-agent"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/zhubert/plural-agent/releases/download/v0.3.0/plural-agent_Darwin_arm64.tar.gz"
-      sha256 "e84c90c07dec0045d3d76be18ae5eaabcf8cd8de1041990954dc4cce18ebca8a"
+      url "https://github.com/zhubert/plural-agent/releases/download/v0.3.1/plural-agent_Darwin_arm64.tar.gz"
+      sha256 "fe14ec2613a65995f4f63dbd0fa8a4ad6131954bef9cd3e47b05ce21944a9e90"
 
       def install
         bin.install "plural-agent"
@@ -32,15 +32,15 @@ class PluralAgent < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/plural-agent/releases/download/v0.3.0/plural-agent_Linux_x86_64.tar.gz"
-      sha256 "b28b0e5953d24fc314998ba9419dd17537049efad3023b51b3f8b814c69c5812"
+      url "https://github.com/zhubert/plural-agent/releases/download/v0.3.1/plural-agent_Linux_x86_64.tar.gz"
+      sha256 "9fbb2fe479219eba7f9290f65e7ef083c2c429a84236642bf841c825734647ab"
       def install
         bin.install "plural-agent"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/plural-agent/releases/download/v0.3.0/plural-agent_Linux_arm64.tar.gz"
-      sha256 "5cfccd560ef5ba1faf1638de038e745516fb02a4a5e81054b7f83d00ff4aaecf"
+      url "https://github.com/zhubert/plural-agent/releases/download/v0.3.1/plural-agent_Linux_arm64.tar.gz"
+      sha256 "3dce71370d9c1355081a5cb3e369ab7af74cda6a6cfb8ae47316fd16d32be4a3"
       def install
         bin.install "plural-agent"
       end
