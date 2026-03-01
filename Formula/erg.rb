@@ -5,7 +5,7 @@
 class Erg < Formula
   desc "Autonomous headless daemon for Claude Code"
   homepage "https://github.com/zhubert/erg"
-  version "0.11.4"
+  version "0.12.0"
   license "MIT"
 
   depends_on "docker" => :recommended
@@ -13,16 +13,16 @@ class Erg < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/zhubert/erg/releases/download/v0.11.4/erg_Darwin_x86_64.tar.gz"
-      sha256 "20050cebf11d62317799f812d6d2c7710392eac90efa8a34a07e98f99dd24c93"
+      url "https://github.com/zhubert/erg/releases/download/v0.12.0/erg_Darwin_x86_64.tar.gz"
+      sha256 "b5bc7d3ee4cafb10b1d9f90018747b08f445c16a8f2697d0727c45b4aed46781"
 
       def install
         bin.install "erg"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/zhubert/erg/releases/download/v0.11.4/erg_Darwin_arm64.tar.gz"
-      sha256 "126be891226eaedf45c4265354389c5738ff8f6ec438db9d9cd564c4e11879bb"
+      url "https://github.com/zhubert/erg/releases/download/v0.12.0/erg_Darwin_arm64.tar.gz"
+      sha256 "32a46b4994568f64e1744aa31000b2930d81bfdd5e4edb80b4f631f64886f502"
 
       def install
         bin.install "erg"
@@ -32,15 +32,15 @@ class Erg < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/erg/releases/download/v0.11.4/erg_Linux_x86_64.tar.gz"
-      sha256 "8cd7689fcda4c4b40023928cddb10b4c436fab0d008dc5c305fc7033a4151114"
+      url "https://github.com/zhubert/erg/releases/download/v0.12.0/erg_Linux_x86_64.tar.gz"
+      sha256 "8d5b915cb445c3b451582eeb300a75c726ebb26892684c96d6e96e8d66aca975"
       def install
         bin.install "erg"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/erg/releases/download/v0.11.4/erg_Linux_arm64.tar.gz"
-      sha256 "ae6da0db5f4219e53e212d1b4ec48fe24dcd8f721855b6207d93ce3d41dcb473"
+      url "https://github.com/zhubert/erg/releases/download/v0.12.0/erg_Linux_arm64.tar.gz"
+      sha256 "56ce6969ce5a52c62c782f6ae77a22c958363726d4e1b2504f19f467626c9a7a"
       def install
         bin.install "erg"
       end
