@@ -14,7 +14,7 @@ class Erg < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/zhubert/erg/releases/download/v1.0.2/erg_Darwin_x86_64.tar.gz"
-      sha256 "672d7a09859394d88a2b520d44447a6f9deb275fb347a8302ecf55bee1c651d4"
+      sha256 "9485b5ec10133bf5e39602ec9b368912231fe81b7c0adf45688b8a1f5ae4dff4"
 
       def install
         bin.install "erg"
@@ -22,7 +22,7 @@ class Erg < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/zhubert/erg/releases/download/v1.0.2/erg_Darwin_arm64.tar.gz"
-      sha256 "d2e3553aafef971729f1b5f3afcaf47f2c5effcf841885920981044d831545e4"
+      sha256 "a4e3a217d5ae77398731fe6a95d33437d84a1f37f9ef05aa69b86add9418e46a"
 
       def install
         bin.install "erg"
@@ -33,17 +33,25 @@ class Erg < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/zhubert/erg/releases/download/v1.0.2/erg_Linux_x86_64.tar.gz"
-      sha256 "7e897cbf09e1f0baba5be203eda09e67a04393c6e6f34f72e956440e63e19cfb"
+      sha256 "601f9748fa34d6e6727692ce037efc208f53f895d16ebaa02b7091932a5feabe"
       def install
         bin.install "erg"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/zhubert/erg/releases/download/v1.0.2/erg_Linux_arm64.tar.gz"
-      sha256 "dd253e89cb46e918a4b2d5aa1b3b6e96d1e91180391cf1ec1b36e7a976e7ac7b"
+      sha256 "4155a6278f4d5a2288a7de03e22bcc945e967f053e3855fb3c154eac2930ee2c"
       def install
         bin.install "erg"
       end
     end
+  end
+
+  service do
+    run [opt_bin/"erg", "start", "-f"]
+    keep_alive true
+    working_dir var/"erg"
+    log_path var/"log/erg/daemon.log"
+    error_log_path var/"log/erg/daemon.err.log"
   end
 end
