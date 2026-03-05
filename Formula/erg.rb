@@ -11,6 +11,14 @@ class Erg < Formula
   depends_on "docker" => :recommended
   depends_on "git"
 
+  service do
+    run [opt_bin/"erg", "start", "-f"]
+    keep_alive crashed: true
+    log_path var/"log/erg.log"
+    error_log_path var/"log/erg.log"
+    environment_variables PATH: std_service_path_env
+  end
+
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/zhubert/erg/releases/download/v1.0.0/erg_Darwin_x86_64.tar.gz"
