@@ -5,7 +5,6 @@ class Zwm < Formula
   sha256 "38a52c4cf3d9ae56c9ea8ebee5422786bbb96017330d00bff0cceca3abcbc615"
   version "0.1.0"
 
-  depends_on xcode: ["15.0", :build]
   depends_on :macos
 
   def install
