@@ -5,25 +5,25 @@
 class Plural < Formula
   desc "TUI for managing multiple concurrent Claude Code sessions"
   homepage "https://github.com/zhubert/plural"
-  version "1.0.3"
+  version "1.0.4"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/zhubert/plural/releases/download/v1.0.3/plural_Darwin_x86_64.tar.gz"
-      sha256 "228fe830578c38197d8a684b7a70734c18db763fd1bff1b0dcdefab763c93469"
+      url "https://github.com/zhubert/plural/releases/download/v1.0.4/plural_Darwin_x86_64.tar.gz"
+      sha256 "30f07a5645e959f1c95b76f199c215ec56dad41175273b40b76f0dba3d8de356"
 
-      def install
+      define_method(:install) do
         bin.install "plural"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/zhubert/plural/releases/download/v1.0.3/plural_Darwin_arm64.tar.gz"
-      sha256 "a59117f690d5fed2ec895c5a962f2cca2db9a6d9624875a91a3f4dd277fe8f9f"
+      url "https://github.com/zhubert/plural/releases/download/v1.0.4/plural_Darwin_arm64.tar.gz"
+      sha256 "ebb55f00ebd2d109f71a4f5a1a0101fd05c542910f54e7cc4a2340d09613eaa5"
 
-      def install
+      define_method(:install) do
         bin.install "plural"
       end
     end
@@ -31,16 +31,16 @@ class Plural < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/plural/releases/download/v1.0.3/plural_Linux_x86_64.tar.gz"
-      sha256 "b0d7cb1926239c38dee5d7e763a60c7d5e05af989ab4f17fb3e00e879ab614f2"
-      def install
+      url "https://github.com/zhubert/plural/releases/download/v1.0.4/plural_Linux_x86_64.tar.gz"
+      sha256 "5dfad68c767d335a8a1099a5d3b281fd1d5c46ba0ef0c685332857acba9494d5"
+      define_method(:install) do
         bin.install "plural"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/plural/releases/download/v1.0.3/plural_Linux_arm64.tar.gz"
-      sha256 "2aff634441dfc9627cef6fff2afa78a7155fcf295f9883b32dfd39244f91481b"
-      def install
+      url "https://github.com/zhubert/plural/releases/download/v1.0.4/plural_Linux_arm64.tar.gz"
+      sha256 "c55825c1fdb0db69b26ac89d1070f4cd82cf4030f2cf767c87d46013859b50f5"
+      define_method(:install) do
         bin.install "plural"
       end
     end
