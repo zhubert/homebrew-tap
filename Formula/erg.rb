@@ -5,7 +5,7 @@
 class Erg < Formula
   desc "Autonomous headless daemon for Claude Code"
   homepage "https://github.com/zhubert/erg"
-  version "1.10.5"
+  version "1.11.0"
   license "MIT"
 
   depends_on "docker" => :recommended
@@ -13,8 +13,8 @@ class Erg < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/zhubert/erg/releases/download/v1.10.5/erg_Darwin_x86_64.tar.gz"
-      sha256 "c0509e90f0ee1bc4b45f46f703d781b763a4bc78c4e9edbc83d94c8ad891f363"
+      url "https://github.com/zhubert/erg/releases/download/v1.11.0/erg_Darwin_x86_64.tar.gz"
+      sha256 "30a93de461d612fe0fe57fdb1e11dd36dd49657e3478a5169e42219b6153ca87"
 
       define_method(:install) do
         bin.install "erg"
@@ -23,8 +23,8 @@ class Erg < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/zhubert/erg/releases/download/v1.10.5/erg_Darwin_arm64.tar.gz"
-      sha256 "7ae1da1c02d875d25b0db44ee08b3e92f451e3b3b3c821fdd6ee6468a6f9ce89"
+      url "https://github.com/zhubert/erg/releases/download/v1.11.0/erg_Darwin_arm64.tar.gz"
+      sha256 "85524bae03f6c767fb031c2c7604981099cdd6107938e2956e174335eab94e25"
 
       define_method(:install) do
         bin.install "erg"
@@ -36,8 +36,8 @@ class Erg < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/erg/releases/download/v1.10.5/erg_Linux_x86_64.tar.gz"
-      sha256 "07a4270c211ec425c20eb1ff84b4df5af9d843e3c745bc04b979c85f6b49f27b"
+      url "https://github.com/zhubert/erg/releases/download/v1.11.0/erg_Linux_x86_64.tar.gz"
+      sha256 "62f53bf1a50b1d2f73d8036dbb21cf04c8cf3adb164b8fb2b6b858c9da62b950"
       define_method(:install) do
         bin.install "erg"
         (var/"erg").mkpath
@@ -45,8 +45,8 @@ class Erg < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/erg/releases/download/v1.10.5/erg_Linux_arm64.tar.gz"
-      sha256 "4ed851f1cfc078cebc039017e708f32cbec98448b679f230ca34dbd9c337a0ba"
+      url "https://github.com/zhubert/erg/releases/download/v1.11.0/erg_Linux_arm64.tar.gz"
+      sha256 "16fe146c4ea2b222e0b7cb7f26b97510a5fdd0feec30655cb5096f7dd9e1860a"
       define_method(:install) do
         bin.install "erg"
         (var/"erg").mkpath
