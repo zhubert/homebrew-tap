@@ -1,26 +1,26 @@
 class Tokencoach < Formula
   desc "Cost analytics for Claude Code sessions"
   homepage "https://github.com/zhubert/tokencoach"
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/zhubert/tokencoach/releases/download/v0.0.3/tokencoach_darwin_arm64.tar.gz"
-      sha256 "ff38842e88821821a384724d13314848b846a3365b915219c3eb1a03f6291840"
+      url "https://github.com/zhubert/tokencoach/releases/download/v0.0.4/tokencoach_darwin_arm64.tar.gz"
+      sha256 "ea6e7e9d92ce22e53f24cc974add8f63c2238996b8cd9c360e7a3a1d5c13e594"
     else
-      url "https://github.com/zhubert/tokencoach/releases/download/v0.0.3/tokencoach_darwin_amd64.tar.gz"
-      sha256 "210ccbe031a817a8ac34d815b334f6adccabf135de2ce46a763e2a271a016164"
+      url "https://github.com/zhubert/tokencoach/releases/download/v0.0.4/tokencoach_darwin_amd64.tar.gz"
+      sha256 "5a4aeec93c0d945e8acf41ee066366d91bc6caf1a013c7f74f5d8602aea05523"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/zhubert/tokencoach/releases/download/v0.0.3/tokencoach_linux_arm64.tar.gz"
-      sha256 "e9bbf260bd3fddc109235bed6af6be208846e5f798c2ea314b4e070880fab7ea"
+      url "https://github.com/zhubert/tokencoach/releases/download/v0.0.4/tokencoach_linux_arm64.tar.gz"
+      sha256 "163f8fbc9292741200cf67ece36b3ad51c73442875d2411367b4f212cdf7ff50"
     else
-      url "https://github.com/zhubert/tokencoach/releases/download/v0.0.3/tokencoach_linux_amd64.tar.gz"
-      sha256 "4efc0b0a916eb35e7d07fcfdc92d8cf8d2d4da242a232300777c599be441bc9c"
+      url "https://github.com/zhubert/tokencoach/releases/download/v0.0.4/tokencoach_linux_amd64.tar.gz"
+      sha256 "f9a75ea2e688539231ea8fa4928ee53b6d80cca85d4d0b37eac90d97ab7eab37"
     end
   end
 
