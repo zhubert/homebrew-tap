@@ -5,23 +5,23 @@
 class Rosy < Formula
   desc "Rose-colored version of a GitHub PR, rendered via Claude"
   homepage "https://github.com/zhubert/rosy"
-  version "0.0.2"
+  version "0.0.3"
   license "MIT"
 
   depends_on "gh"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/zhubert/rosy/releases/download/v0.0.2/rosy_0.0.2_darwin_amd64.tar.gz"
-      sha256 "03bd6313ba73eaa8595910a25f5f89345c064baaa8601a5912695618112b1d00"
+      url "https://github.com/zhubert/rosy/releases/download/v0.0.3/rosy_0.0.3_darwin_amd64.tar.gz"
+      sha256 "9ac6eba94a115df4093ebe0a0c86f7e0975932df43dfb9e88ae8f0519a7b5abc"
 
       define_method(:install) do
         bin.install "rosy"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/zhubert/rosy/releases/download/v0.0.2/rosy_0.0.2_darwin_arm64.tar.gz"
-      sha256 "6ba1e897541aa98d101f12bedd8be3ff70d2113ac757f9d6241b4bf19ec8633c"
+      url "https://github.com/zhubert/rosy/releases/download/v0.0.3/rosy_0.0.3_darwin_arm64.tar.gz"
+      sha256 "356075edbec658152443cab88867e2fe99fe7369897c6387f95f4cc61500b277"
 
       define_method(:install) do
         bin.install "rosy"
@@ -31,15 +31,15 @@ class Rosy < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/rosy/releases/download/v0.0.2/rosy_0.0.2_linux_amd64.tar.gz"
-      sha256 "8772dc3884826bf2a5d2746d7f29278f55805734b9d0d249c58495457f288152"
+      url "https://github.com/zhubert/rosy/releases/download/v0.0.3/rosy_0.0.3_linux_amd64.tar.gz"
+      sha256 "3960cefcb995f130dc965d146658643d25c24c0e9524c2db3aa72ccb41901803"
       define_method(:install) do
         bin.install "rosy"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhubert/rosy/releases/download/v0.0.2/rosy_0.0.2_linux_arm64.tar.gz"
-      sha256 "050c4903d8b9916e3df1ab34175926d65a62919434cbb667fdc98d6d20b4cbe2"
+      url "https://github.com/zhubert/rosy/releases/download/v0.0.3/rosy_0.0.3_linux_arm64.tar.gz"
+      sha256 "8fa8a6e9f677516cd79efd3bbd74e245b406e83fcc976ceabb9ee2c04b44e590"
       define_method(:install) do
         bin.install "rosy"
       end
