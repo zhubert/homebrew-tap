@@ -1,9 +1,9 @@
 class Zwm < Formula
   desc "Tiling window manager for macOS"
   homepage "https://github.com/zhubert/zwm"
-  url "https://github.com/zhubert/zwm/archive/refs/tags/v1.1.3.tar.gz"
-  sha256 "bcdb280f2173385c9548e3ebaa696d01cb7c87b60e311583f754c08578a8aa47"
-  version "1.1.3"
+  url "https://github.com/zhubert/zwm/archive/refs/tags/v1.1.4.tar.gz"
+  sha256 "3772e8ebf20dd2fb4c2e45ce6ae47eb2dc22acb5dbfb53dd3b0f6b80eaa8787e"
+  version "1.1.4"
 
   depends_on :macos
 
