@@ -1,51 +1,27 @@
 class Zwm < Formula
   desc "Tiling window manager for macOS"
   homepage "https://github.com/zhubert/zwm"
-  url "https://github.com/zhubert/zwm/archive/refs/tags/v1.1.6.tar.gz"
-  sha256 "0282c2f4609e0d7d7f37bd32dc34c36d0f7b3d11910d854dcc6fb4a44909e6d1"
-  version "1.1.6"
+  url "https://github.com/zhubert/zwm/releases/download/v1.2.0/zwm-v1.2.0-macos-arm64.tar.gz"
+  sha256 "5d3fa6bcbe552a72297149fdbef5d49b4aad13bdafaf30e88105d61b349ec017"
+  version "1.2.0"
+  license "MIT"
 
   depends_on :macos
+  depends_on arch: :arm64
 
+  # This ships a prebuilt bundle that was code-signed at release time rather than
+  # building from source. brew cannot sign anything itself: its build sandbox
+  # denies reads of ~/Library/Keychains, so the signing identity is invisible
+  # there. An ad-hoc signature would key the Accessibility grant to a cdhash that
+  # changes every version, forcing a re-grant on each upgrade. Signing once,
+  # upstream, gives a stable designated requirement so the grant persists.
+  #
+  # Formula rather than cask on purpose: formulae don't set the quarantine
+  # attribute, so a self-signed bundle never faces a Gatekeeper prompt, and
+  # `service` keeps `brew services` working (casks have no launchd support).
   def install
-    system "swift", "build", "-c", "release", "--disable-sandbox"
-
-    # Install server as app bundle (for Accessibility TCC grouping)
-    app_bundle = prefix/"ZWM.app"
-    mkdir_p app_bundle/"Contents/MacOS"
-    mkdir_p app_bundle/"Contents/Resources"
-    cp buildpath/".build/release/zwm-server", app_bundle/"Contents/MacOS/zwm-server"
-    cp "resources/Info.plist", app_bundle/"Contents/Info.plist"
-
-    # Sign with a stable identity if one exists locally, so the Accessibility /
-    # Input Monitoring grants survive future `brew upgrade`s instead of being
-    # invalidated by a new ad-hoc cdhash each time.
-    signing_identity = "Zack's Window Manager Signing"
-    identities = Utils.safe_popen_read("security", "find-identity", "-v", "-p", "codesigning")
-    has_identity = identities.include?(signing_identity)
-
-    if !has_identity && $stdin.tty?
-      print "Create a local code-signing identity so Accessibility/Input " \
-            "Monitoring grants survive future upgrades? [Y/n] "
-      answer = $stdin.gets.to_s.strip
-      if answer.empty? || answer =~ /\Ay/i
-        system "bash", "#{buildpath}/scripts/create-signing-cert.sh"
-        identities = Utils.safe_popen_read("security", "find-identity", "-v", "-p", "codesigning")
-        has_identity = identities.include?(signing_identity)
-      end
-    end
-
-    if has_identity
-      system "codesign", "--force", "--sign", signing_identity, "--identifier", "com.zhubert.zwm",
-             "--timestamp=none", app_bundle
-    else
-      opoo "No '#{signing_identity}' identity found — leaving ad-hoc signature. " \
-           "Accessibility/Input Monitoring must be re-granted after every upgrade. " \
-           "Run the zwm repo's scripts/create-signing-cert.sh once to fix this."
-    end
-
-    # Install CLI
-    bin.install ".build/release/zwm"
+    prefix.install "ZWM.app"
+    bin.install "zwm"
   end
 
   service do
@@ -63,6 +39,10 @@ class Zwm < Formula
 
       Start the service with:
         brew services start zwm
+
+      The bundle is signed with a stable identity, so this grant survives future
+      upgrades. If you are coming from a version installed before ZWM was signed,
+      you need to re-grant Accessibility once more.
     EOS
   end
 
